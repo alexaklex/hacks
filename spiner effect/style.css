@@ -1,0 +1,130 @@
+.outer_wrap {
+    margin: 50px;
+}
+.outer_wrap,
+.inner_wrap,
+.inner_wrap img{
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+.outer_wrap::before,
+.outer_wrap::after,
+.inner_wrap::before,
+.inner_wrap::after {
+    position: absolute;
+    z-index: 10;
+}
+.outer_wrap::before,
+.outer_wrap::after{
+    left: 50%;
+    margin-left: -10px;
+}
+.inner_wrap::before,
+.inner_wrap::after {
+    top: 50%;
+    margin-top: -10px;
+}
+
+.outer_wrap::before {
+    top: 0;
+    margin-top: -20px;
+    content: '\25bc';
+}
+.outer_wrap::after {
+    bottom: 0; 
+    margin-bottom: -20px;
+    content: '\25b2';
+}
+.inner_wrap::before {
+    left: 0;
+    margin-left: -20px;
+    content: '\25ba';
+}
+.inner_wrap::after {
+    right: 0;
+    margin-right: -20px;
+    content: '\25c4';
+}
+.outer_wrap:hover {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 3000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 3000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.outer_wrap:hover img {
+    -webkit-animation-name: spinback;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinback;
+    -moz-animation-duration: 3000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinback;
+    -ms-animation-duration: 3000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spinback;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+/**/
+@-ms-keyframes spinback {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(-360deg); }
+}
+@-moz-keyframes spinback {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(-360deg); }
+}
+@-webkit-keyframes spinback {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(-360deg); }
+}
+@keyframes spinback {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}
+
